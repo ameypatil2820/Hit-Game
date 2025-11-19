@@ -5,66 +5,44 @@
 }
 
 body{
+    font-family: 'Poppins', sans-serif;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(140deg, #ffeefd, #f4f5ff, #e8fff6);
-    background-size: 300% 300%;
-    animation: bodyAnim 14s infinite alternate;
-}
-
-@keyframes bodyAnim {
-    0%{ background-position: left top;}
-    100%{ background-position: right bottom;}
+    background: #f2f5ff;
 }
 
 .container{
     width: 95%;
-    max-width: 900px;
+    max-width: 850px;
     height: 95vh;
 
-    background: rgba(255,255,255,0.30);
-    border-radius: 35px;
-    backdrop-filter: blur(20px);
+    background: #ffffffd9;
+    border-radius: 25px;
     padding: 12px;
-
-    box-shadow: 0 20px 40px rgba(150,140,255,0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .card{
     width: 100%;
     height: 100%;
+    border-radius: 22px;
+    background: #fff;
     display: flex;
     flex-direction: column;
-
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(18px);
-    border-radius: 28px;
     overflow: hidden;
-
-    border: 2px solid rgba(255,255,255,0.6);
+    border: 1px solid #ececec;
 }
 
 .card-section{
     display: flex;
     justify-content: space-between;
-    padding: 18px;
-
-    background: linear-gradient(90deg, #ffb3d1, #dcb7ff, #acebff, #baffdf);
-    background-size: 400% 400%;
-    animation: headMove 12s infinite alternate;
-
-    box-shadow: 0 5px 18px rgba(255,170,200,0.35);
-}
-
-@keyframes headMove {
-    0%{ background-position: left;}
-    100%{ background-position: right;}
+    background: #eef1ff;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
 }
 
 .hit-value,
@@ -72,77 +50,39 @@ body{
 .score,
 .highscore{
     flex: 1;
-    margin: 6px;
+    margin: 5px;
     text-align: center;
+    padding: 12px 15px;
+    font-size: 18px;
+    font-weight: 600;
 
-    background: rgba(255,255,255,0.78);
-    border-radius: 18px;
-    padding: 14px 20px;
-
-    font-weight: 700;
-    font-size: 19px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #ddd;
     color: #444;
-
-    box-shadow: 0 6px 16px rgba(190,160,255,0.28);
-    border: 1px solid rgba(200,200,255,0.35);
-
-    transition: 0.25s ease;
-}
-
-.hit-value:hover,
-.timer:hover,
-.score:hover,
-.highscore:hover{
-    transform: translateY(-4px);
-    background: #fff9ff;
 }
 
 .bord-container{
     flex: 1;
-    padding: 25px;
+    padding: 18px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: flex-start;
-    gap: 18px;
-
-    background: linear-gradient(140deg, #f1fff4, #fff4fb);
-    border-radius: 30px;
-
-    box-shadow: inset 0 0 30px rgba(255,180,220,0.25);
-    
-    /* Smooth scrollable board */
+    gap: 15px;
     overflow-y: auto;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-
-    /* Soft fade edges */
-    mask-image: linear-gradient(to bottom,
-        transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
-/* Premium Scrollbar */
-.bord-container::-webkit-scrollbar {
-    width: 12px;
+.bord-container::-webkit-scrollbar{
+    width: 8px;
 }
-.bord-container::-webkit-scrollbar-track {
-    background: rgba(255,225,245,0.45);
-    border-radius: 12px;
-    box-shadow: inset 0 0 12px rgba(255,150,200,0.25);
-}
-.bord-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(150deg, #ff9fd0, #b6b0ff);
-    border-radius: 12px;
-    box-shadow: 0 0 12px rgba(180,150,255,0.45);
-}
-.bord-container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(150deg, #ffa9d4, #a99dff);
+.bord-container::-webkit-scrollbar-thumb{
+    background: #d0d4ff;
+    border-radius: 10px;
 }
 
-/* Circles */
 .circle{
-    height: 65px;
-    width: 65px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     cursor: pointer;
 
@@ -150,35 +90,29 @@ body{
     justify-content: center;
     align-items: center;
 
+    font-size: 20px;
     font-weight: 700;
-    font-size: 22px;
-    color: #fff;
-
-    background: linear-gradient(150deg, #ffaac5, #a9c4ff, #a8ffd9, #ffd1a6);
-    background-size: 300% 300%;
-    animation: circleAnim 4s infinite alternate;
-
-    box-shadow: 0 8px 18px rgba(255,140,180,0.35);
-    transition: 0.35s ease;
-}
-
-@keyframes circleAnim {
-    0%{ background-position: left top;}
-    100%{ background-position: right bottom;}
+    color: white;
+    background: #8ea1ff;
+    transition: 0.25s;
 }
 
 .circle:hover{
-    transform: scale(1.25) rotate(4deg);
-    box-shadow: 0 12px 24px rgba(255,120,160,0.45);
-    background: linear-gradient(130deg, #ffe8f3, #e3e6ff);
+    background: #6b83ff;
+    transform: scale(1.15);
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px){
+/* Mobile View */
+@media(max-width: 768px){
     .circle{
         height: 45px;
         width: 45px;
         font-size: 16px;
+    }
+
+    .card-section{
+        flex-direction: column;
+        gap: 8px;
     }
 
     .hit-value,
@@ -186,10 +120,5 @@ body{
     .score,
     .highscore{
         font-size: 14px;
-        padding: 10px;
-    }
-
-    .card-section{
-        flex-direction: column;
     }
 }

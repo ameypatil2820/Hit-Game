@@ -7,6 +7,8 @@ let highscoreElement = document.querySelector(".highscore")
 let bgAudio = new Audio("../assect/event-pop-commercial-music-420712.mp3");
 let clickAudio = new Audio("./assect/sharp-pop-328170.mp3");
 
+const colors = ['#ff8a65','#4db6ac','#ba68c8','#fdd835','#e57373','#64b5f6'];
+
 
 let hitValue;
 let time = 60;
@@ -26,6 +28,7 @@ function boardFunction() {
         let randomNumber = Math.floor(Math.random() * 10);
         circleElement.textContent = randomNumber;
         bordElement.appendChild(circleElement);
+        circleElement.style.background = colors[Math.floor(Math.random() * colors.length)];
     }
 }
 boardFunction();
